@@ -15,8 +15,12 @@ def sum x
 	answer
 end
 
-def multiply x, y
-	x * y
+def multiply *nums
+	answer = 1
+	nums.each do |num|
+		answer *= num
+	end
+	answer
 end
 
 def power x, y
@@ -24,11 +28,13 @@ def power x, y
 end
 
 def factorial num
-	ascendant = 1
-	answer = 1
-	while ascendant < num
-		answer *= ascendant
-		ascendant += 1
+	i = 1
+	if num == 0
+		return 1
 	end
-	answer
+	while num > 0
+		i = i * num
+		num -= 1
+	end
+	return i
 end
